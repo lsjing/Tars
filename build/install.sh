@@ -61,8 +61,6 @@ if [   ! -n "$MysqlIncludePath"  ]
 
 fi
 
-echo 'done ...'
-exit
 
 yum install -y perl
 cd /usr/local/mysql
