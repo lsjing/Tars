@@ -50,7 +50,7 @@ if [   ! -n "$MysqlIncludePath"  ]
 	tar zxvf mysql-5.6.26.tar.gz
 	cd mysql-5.6.26
 	cmake . -DCMAKE_INSTALL_PREFIX=/usr/local/mysql-5.6.26 -DWITH_INNOBASE_STORAGE_ENGINE=1 -DMYSQL_USER=mysql -DDEFAULT_CHARSET=utf8 -DDEFAULT_COLLATION=utf8_general_ci
-	make
+	make -j `grep processor /proc/cpuinfo | wc -l` 
 	make install
 	ln -s /usr/local/mysql-5.6.26 /usr/local/mysql
   else
