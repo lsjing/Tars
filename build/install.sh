@@ -77,6 +77,7 @@ sed -i "s/192.168.2.131/${MachineIp}/g" `grep 192.168.2.131 -lir ${BaseDir}/buil
 cp -arf /xuef/github/Tars/build/conf/my.cnf /usr/local/mysql/
 
 ./scripts/mysql_install_db --datadir=/usr/local/mysql/data --user=mysql
+sleep 10
 mkdir /var/run/mysqld
 mkdir /var/log/mariadb
 chown mysql:mysql /var/run/mysqld
@@ -84,6 +85,7 @@ chown mysql:mysql /var/log/mariadb
 
 #service mysql start
 /usr/local/mysql-5.6.26/bin/mysqld_safe --datadir=/usr/local/mysql/data --user=mysql --log-error=/tmp/mariadb.log --pid-file=/tmp/mariadb.pid --socket=/tmp/mysql.sock &
+sleep 10
 echo '/usr/local/mysql-5.6.26/bin/mysqld_safe --datadir=/usr/local/mysql/data --user=mysql --log-error=/tmp/mariadb.log --pid-file=/tmp/mariadb.pid --socket=/tmp/mysql.sock &' >> /etc/rc.local
 
 #chkconfig mysql on
