@@ -119,14 +119,14 @@ sed -i 's#mysql#/usr/local/mysql/bin/mysql#g' ./exec-sql.sh
 ./exec-sql.sh
 
 cd ${BaseDir}/framework/build/
-make -j `grep processor /proc/cpuinfo | wc -l` framework-tar
+make framework-tar
 
-make -j `grep processor /proc/cpuinfo | wc -l` tarsstat-tar
-make -j `grep processor /proc/cpuinfo | wc -l` tarsnotify-tar
-make -j `grep processor /proc/cpuinfo | wc -l` tarsproperty-tar
-make -j `grep processor /proc/cpuinfo | wc -l` tarslog-tar
-make -j `grep processor /proc/cpuinfo | wc -l` tarsquerystat-tar
-make -j `grep processor /proc/cpuinfo | wc -l` tarsqueryproperty-tar
+make tarsstat-tar
+make tarsnotify-tar
+make tarsproperty-tar
+make tarslog-tar
+make tarsquerystat-tar
+make tarsqueryproperty-tar
 
 mkdir -p /usr/local/app/tars/
 cd ${BaseDir}/framework/build/
